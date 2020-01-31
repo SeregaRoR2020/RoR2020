@@ -1,26 +1,21 @@
-puts "Введите коэффициент а"
-a = gets.chomp
-a = a.to_f
-puts "Введите коэффициент b"
-b = gets.chomp
-b = b.to_f
-puts "Введите коэффициент c"
-c = gets.chomp
-c = c.to_f
+puts 'Введите коэффициент а'
+a = gets.chomp.to_f
 
-d = (b**2)-(4*a*c)
-d = d.to_f
+puts 'Введите коэффициент b'
+b = gets.chomp.to_f
 
-puts "Дискриминант менее нуля, решения нет" if d<0 
+puts 'Введите коэффициент c'
+c = gets.chomp.to_f
 
-k = Math.sqrt(d)
-x1 = (-b + k)/(2*a)
-x2 = (-b - k)/(2*a)
+d = ((b**2)-(4 * a * c)).to_f
 
-if d>0
+if d > 0
+	x1 = (-b + Math.sqrt(d))/(2 * a)
+	x2 = (-b - Math.sqrt(d))/(2 * a)
 	puts "Дискриминант больше нуля и корней два - х1=#{x1} и х2=#{x2}"
-elsif d==0
+elsif d == 0
+	x1 = (-b + Math.sqrt(d))/(2 * a)
 	puts "Дискриминант равен нулю, корень только один х1=#{x1}"
 else
-	puts "Дискриминант меньше нуля, корней нет"
+	puts 'Дискриминант меньше нуля, корней нет'
 end
